@@ -1,0 +1,59 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>ANS.SecureFrameworkLib.Activities.Design</RootNamespace>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\CheckBoolean.png" />
+    <None Remove="Resources\CheckCredentials.png" />
+    <None Remove="Resources\CheckFile.png" />
+    <None Remove="Resources\CheckFolder.png" />
+    <None Remove="Resources\CheckInt.png" />
+    <None Remove="Resources\CheckMailAddress.png" />
+    <None Remove="Resources\CheckMailAddressCollection.png" />
+    <None Remove="Resources\CheckStorage.png" />
+    <None Remove="Resources\CheckString.png" />
+    <None Remove="Resources\CheckUrl.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Activities.Core.Presentation" Version="6.0.0-20220831.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ANS.SecureFrameworkLib.Activities\ANS.SecureFrameworkLib.Activities.vbproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\CheckBoolean.png" />
+    <Resource Include="Resources\CheckCredentials.png" />
+    <Resource Include="Resources\CheckFile.png" />
+    <Resource Include="Resources\CheckFolder.png" />
+    <Resource Include="Resources\CheckInt.png" />
+    <Resource Include="Resources\CheckMailAddress.png" />
+    <Resource Include="Resources\CheckMailAddressCollection.png" />
+    <Resource Include="Resources\CheckStorage.png" />
+    <Resource Include="Resources\CheckString.png" />
+    <Resource Include="Resources\CheckUrl.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="My Project\Resources.Designer.vb">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="My Project\Resources.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

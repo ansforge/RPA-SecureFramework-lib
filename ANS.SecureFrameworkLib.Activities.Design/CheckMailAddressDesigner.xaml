@@ -1,0 +1,40 @@
+﻿<sap:ActivityDesigner x:Class="CheckMailAddressDesigner"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:s="clr-namespace:System;assembly=mscorlib"
+    xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"
+    xmlns:sapc="clr-namespace:System.Activities.Presentation.Converters;assembly=System.Activities.Presentation"
+    xmlns:sapv="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation">
+    <sap:ActivityDesigner.Icon>
+        <DrawingBrush>
+            <DrawingBrush.Drawing>
+                <ImageDrawing>
+                    <ImageDrawing.Rect>
+                        <Rect Location="0,0" Size="16,16"></Rect>
+                    </ImageDrawing.Rect>
+                    <ImageDrawing.ImageSource>
+                        <BitmapImage UriSource="pack://application:,,,/ANS.SecureFrameworkLib.Activities.Design;component/Resources/CheckMailAddress.png"></BitmapImage>
+                    </ImageDrawing.ImageSource>
+                </ImageDrawing>
+            </DrawingBrush.Drawing>
+        </DrawingBrush>
+    </sap:ActivityDesigner.Icon>
+    <sap:ActivityDesigner.Resources>
+        <ResourceDictionary>
+            <sapc:ArgumentToExpressionConverter x:Key="ArgumentToExpressionConverter" />
+            <DataTemplate x:Key="Expanded">
+                <Grid HorizontalAlignment="Stretch" Margin="0,-5,0,0">
+                    <Label Content="Name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0"/>
+                    <sapv:ExpressionTextBox VerticalAlignment="Top" Margin="0,26,0,5" MinWidth="210"
+                 Expression="{Binding ModelItem.Name, Converter={StaticResource ArgumentToExpressionConverter}, ConverterParameter=In, Mode=TwoWay}"
+                 OwnerActivity="{Binding ModelItem}"
+                 ExpressionType="s:String"/>
+                </Grid>
+            </DataTemplate>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Style.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </sap:ActivityDesigner.Resources>
+    <ContentPresenter Style="{DynamicResource ExpandOrCollapsedStyle}" Content="{Binding}" />
+</sap:ActivityDesigner>

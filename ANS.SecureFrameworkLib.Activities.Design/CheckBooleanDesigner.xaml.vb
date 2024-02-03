@@ -1,0 +1,3 @@
+﻿Class CheckBooleanDesigner
+
+End Class
